@@ -166,8 +166,8 @@ class Mumps(Package):
             if using_xlf:
                 makefile_conf.append('OPTF = -O%s -qfixed' % opt_level)
             else:
-                makefile_conf.append('OPTF = %s -O%s -DALLOW_NON_INIT' % (
-                    fpic, opt_level))
+                makefile_conf.append('OPTF = %s -O%s -DALLOW_NON_INIT %s' % (
+                    fpic, opt_level, '-fallow-argument-mismatch'))
 
             makefile_conf.extend([
                 'OPTL = %s -O%s' % (cpic, opt_level),
